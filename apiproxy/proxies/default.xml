@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/><!-- another example commit -->
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="Get Results">
+            <Request>
+                <Step>
+                    <Name>RaiseFault.400</Name>
+                    <Condition>request.queryparam.position = NULL or request.queryparam.driver = NULL or request.queryparam.year = NULL</Condition>
+                </Step>
+            </Request>
+            <Condition>proxy.pathsuffix MatchesPath "/results" and request.verb = "GET"</Condition>
+        </Flow>
+        <Flow name="Not Found">
+            <Request>
+                <Step>
+                    <Name>RaiseFault.404</Name>
+                </Step>
+            </Request>
+        </Flow>
+    </Flows>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+    <HTTPProxyConnection>
+        <BasePath>/v1/f1</BasePath>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+</ProxyEndpoint>

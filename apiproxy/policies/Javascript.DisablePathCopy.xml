@@ -1,0 +1,3 @@
+<Javascript name="Javascript.DisablePathCopy" timeout="200">
+  <ResourceURL>jsc://DisablePathCopy.js</ResourceURL>
+</Javascript>

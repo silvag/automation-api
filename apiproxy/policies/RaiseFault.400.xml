@@ -1,0 +1,9 @@
+<RaiseFault name="RaiseFault.400">
+ <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+ <FaultResponse>
+   <Set>
+     <StatusCode>418</StatusCode>
+     <ReasonPhrase>Bad Request</ReasonPhrase>
+   </Set>
+ </FaultResponse>
+</RaiseFault>

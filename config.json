@@ -1,0 +1,26 @@
+{
+    "configurations": [{
+        "name": "test",
+        "policies": [],
+        "proxies": [],
+        "targets": [{
+            "name": "default.xml",
+            "tokens": [{
+                "value": "http://seandavis-test.apigee.net/f1-mock",
+                "xpath": "/TargetEndpoint/HTTPTargetConnection/URL"
+            }]
+        }]
+    },
+    {
+        "name": "prod",
+        "policies": [],
+        "proxies": [],
+        "targets": [{
+            "name": "default.xml",
+            "tokens": [{
+                "value": "http://ergast.com/api/f1/",
+                "xpath": "/TargetEndpoint/HTTPTargetConnection/URL"
+            }]
+        }]
+    }]
+}

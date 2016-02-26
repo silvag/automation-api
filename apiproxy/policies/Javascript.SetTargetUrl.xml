@@ -1,0 +1,3 @@
+<Javascript name="Javascript.SetTargetUrl" timeout="200">
+  <ResourceURL>jsc://SetTargetUrl.js</ResourceURL>
+</Javascript>
